@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+# MovieLens - Client Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Running the Application
 
-Currently, two official plugins are available:
+Before running this application, ensure that Docker is installed. You can install it by following this [Docker Installation Guide](https://docs.docker.com/engine/install/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Once Docker is installed, add an `.env` file to the root of the project and include the `VITE_BASE_URL` environment variable with the base API link (e.g., "http://localhost:8080").
 
-## Expanding the ESLint configuration
+Open your terminal and run the following command:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```shell
+docker-compose up -d
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Your application will be accessible at http://localhost:80.
+
+## Page Descriptions
+
+- **Top K Movies:** On this page, you can search for the best movies by specifying a value for 'k' (number).
+- **Popular Movies:** On this page, you will find the most popular movies based on the relationship between rating and the number of ratings.
+- **Movies By Genre and Year:** On this page, you can search for movies by genre and year.
+- **Home:** On this page, you can search for movies by title.
+
+## Technologies Used
+
+### Technologies used for developing this application:
+
+- ReactJS with TypeScript using the ViteJS library.
+- shadcn/ui for UI components.
+- TailwindCSS for styling.
+- react-router-dom for routing the application.
+- axios for making requests to the API.
+- lucide-react for the icons library.
